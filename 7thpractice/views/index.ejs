@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/javascripts/script.js" defer></script>
+</head>
+
+<body>
+    <div class="main   pt-2 bg-zinc-900  ">
+        <div class="header  h-20 ml-8 mt-4 mr-8 bg-blue-900 rounded-3xl p-4">
+            <div class="droplist mt-2 w-8 h-8 text-white border border-transparent shadow-lg cursor-pointer "action="/droplist" id="dropdownButton">
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24H40z" />
+                </svg>
+            </div>
+
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu"
+                class="hidden w-full  relative mt-2 w-48 bg-blue-800 rounded-md shadow-lg  transition duration-500 ">
+                <div class="py-1 ">
+                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700" ">Home</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700">Applications</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700">Help</a>
+                </div>
+            </div>
+        </div>
+        
+            
+        
+
+
+
+
+        <div class="form p-10 text-white ">
+            <form class="" action="/create" method="post">
+                <input class="block w-full px-5 py-2 rounded-md mt-2 bg-zinc-800 placeholder-center" type="text"
+                    placeholder="title goes here" name="title">
+                <textarea class="block w-full  px-5 py-2 rounded-md mt-2 resize-none bg-zinc-800 placeholder-center"
+                    placeholder="write task details here" name="details"></textarea>
+                <input class="bg-blue-600 mt-2 px-5 py-2 rounded-md " type="submit" value="created task">
+            </form>
+        </div>
+
+        <div class="tasks flex gap-3 bg-zinc-700 p-10 flex-wrap rounded-md ml-10 mr-10 pl-10">
+            <% if(files.length>0){ %>
+                <!-- <%= %> is use when we want answer print other use for for if else -->
+                <% files.forEach(function(val){ %>
+                    <div class="task w-60 flex-grow flex-basis px-3 py-4 rounded-md  bg-zinc-800">
+                        <h3 class="text-white text-2xl tracking-tighter">
+                            <%= val %>
+                                </h1>
+                                <div class="flex w-full justify-between items-center mt-3">
+                                <a class="text-blue-500 inline-block ", href="/file/<%= val %>">read more</a>
+                                <a class="text-zinc-600 "  href="/edit/<%= val %>">edit</a>
+                    </div>     
+                 </div>
+                    <% }) %>
+                        <% } else { %>
+                            <h3 class="text-zinc-500">no task yet</h3>
+                            <% } %>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</body>
+
+</html>
