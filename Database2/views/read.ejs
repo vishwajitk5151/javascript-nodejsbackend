@@ -1,0 +1,57 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Database2/public/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/Database2/public/javascripts/script.js"></script>
+</head>
+<body>
+    <div  class=" min-h-screen bg-zinc-900 p-10 text-white">
+        
+        <div class="flex flex-wrap">
+            <!-- Logo -->
+            <div class="w-5 h-5 logo text-white pt-2 mr-5 ">
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"/>
+                </svg>
+            </div>
+        
+            <!-- Title -->
+             
+            <h1 class="text-3xl tracking-tighter mb-10 flex-grow ">All User</h1>
+        
+            <!-- Navigation Button -->
+            <div class="nav w-[120px] h-[43px] pt-[8.5px] rounded-lg mt-3 bg-blue-500">
+                <a class="px-5 text-white" href="/">Back Home</a>
+            </div>
+        
+        </div>
+        
+        <div class="users  flex flex-wrap gap-3">
+            <% users.forEach(function(user){ %>
+                <div class="user w-full sm:w-[48%] md:w-[31%] lg:w-[23%] p-5 bg-zinc-800 rounded-lg">
+                    <div class="w-full h-72 rounded-lg bg-red-500">
+                        <img class=" w-full h-full object-cover " src="<%= user.image %>" alt="">
+                    </div>
+                    <h3 class="text-xl mt-3 tracking-tighter"><%= user.name %></h3>
+                    <h5 class="text-zinc-500"><%= user.email %></h5>
+                    <div class="flex gap-3 mt-8">
+                        <a class=" text-zinc-300 cursor-pointer" href="/edit/<%= user._id %>">edit user</a>
+                        <a class=" text-red-700 cursor-pointer" href="/delete/<%= user._id %>">delete user</a>
+        
+                    </div>
+                </div>
+                    <% }) %>
+            
+            
+            
+            
+        </div>
+        
+        
+    </div>
+
+</body>
+</html>

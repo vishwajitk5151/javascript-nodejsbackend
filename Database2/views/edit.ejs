@@ -1,0 +1,30 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Database2/public/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/Database2/public/javascripts/script.js"></script>
+</head>
+<body>
+    <div  class="w-full h-full bg-zinc-900 p-10 text-white">
+        
+        <h1 class="text-3xl w-50 tracking-tighter ">Update User</h1>
+        <form action="/update/<%= user._id %>" method="post">
+            <div class="flex flex-grow flex-wrap ">
+                <input class="px-5 py-3 border-2 border-zinc-800 outline-none bg-transparent m-3" type="text" name="name"  value="<%= user.name %>" placeholder="name" >
+                <input class="px-5 py-3 border-2 border-zinc-800 outline-none bg-transparent m-3" type="text" name="email" value="<%= user.email %>" placeholder="email">
+                <input class="px-5 py-3 border-2 border-zinc-800 outline-none bg-transparent m-3" type="text" name="image" value="<%= user.image %>" placeholder="image url">
+            </div>
+            <div class="flex">
+            <input class="px-5 py-2 bg-yellow-500 text-black rounded-lg m-3"   type="submit" value="Update User" >
+            <div class="nav w-[120px] h-[43px] pt-[8.5px] rounded-lg mt-[10px] bg-red-500">
+                <a class="px-5  text-white-500 "  href="/read">Read Users</a>
+            </div>
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>

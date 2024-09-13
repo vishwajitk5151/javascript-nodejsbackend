@@ -1,0 +1,3 @@
+Data Storage:
+Types of Dbs: sql|Nosql
+Nosql-mongoDB
