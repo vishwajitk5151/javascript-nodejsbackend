@@ -1,0 +1,36 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Database2/public/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/Database2/public/javascripts/script.js"></script>
+</head>
+<body>
+    <div  class="w-full h-full bg-zinc-900 p-10 text-white">
+        
+        <h1 class="text-3xl w-50 tracking-tighter ">Upload Files</h1>
+        <div class="my-5">
+        <!-- handles the uploading of the file in small chunks-->
+        <form autocomplete="off" action="/upload" method="post" enctype="multipart/form-data" > 
+            <div class="gap">
+                
+                
+                <div class="flex"> <!-- Added gap-2 for small gap -->
+                    <input type="file" name="image">
+                    <input class="px-5 py-2 bg-blue-500 rounded-lg m-3" type="submit" value="Upload">
+                    
+                    <div class="nav w-[120px] h-[43px] pt-[8.5px] rounded-lg mt-[10px] bg-red-500">
+                        <a class="px-5 text-white-500" href="/login">LoginUsers</a>
+                    </div>
+                </div>
+                
+
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+</html>
