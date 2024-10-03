@@ -42,7 +42,7 @@ app.post("/register",async(req,res)=>{
             })
             let token=jwt.sign({email:email,userid:user._id},"shhh")
             res.cookie("token",token)
-            res.redirect("/index")
+            res.redirect("/")
 
         })
         
@@ -119,6 +119,11 @@ app.get('/like/:id',isLoggedIn,async(req,res)=>{
 app.get('/edit/:id',isLoggedIn,async(req,res)=>{
     let post = await postModel.findOne({_id:req.params.id})
     res.render('edit',{post})
+})
+
+app.get('/delete/:id',isLoggedIn,async(req,res)=>{
+    let post=await postModel.deleteOne({_id:req.params.id})
+    res.redirect('/profile')
 })
 
 
